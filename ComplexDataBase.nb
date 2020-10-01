@@ -1,0 +1,147 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 8.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[      5076,        138]
+NotebookOptionsPosition[      4702,        122]
+NotebookOutlinePosition[      5149,        139]
+CellTagsIndexPosition[      5106,        136]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"ligandsIn", "=", 
+   RowBox[{"OpenRead", "[", "\"\<ComplexDataBase1.txt\>\"", "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"LigandTag", "=", 
+   RowBox[{"StringJoin", "[", 
+    RowBox[{"\"\<(X\>\"", ",", 
+     RowBox[{"ToString", "[", "ComplexStructure", "]"}], ",", "\"\<)\>\""}], 
+    "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"readtest", "=", "True"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"xC", "=", 
+   RowBox[{"{", "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"While", "[", 
+   RowBox[{"readtest", ",", 
+    RowBox[{
+     RowBox[{"xr", "=", 
+      RowBox[{"Read", "[", 
+       RowBox[{"ligandsIn", ",", "Word"}], "]"}]}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{"xr", "\[Equal]", " ", "EndOfFile"}], ",", 
+       RowBox[{"readtest", "=", "False"}]}], "]"}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{"xr", "\[Equal]", " ", "LigandTag"}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"ligandname", " ", "=", 
+         RowBox[{"Read", "[", 
+          RowBox[{"ligandsIn", ",", "Word"}], "]"}]}], ";", 
+        "\[IndentingNewLine]", 
+        RowBox[{"While", "[", 
+         RowBox[{"readtest", ",", 
+          RowBox[{
+           RowBox[{"k", "=", 
+            RowBox[{"Read", "[", 
+             RowBox[{"ligandsIn", ",", "Number"}], "]"}]}], ";", 
+           "\[IndentingNewLine]", 
+           RowBox[{"If", "[", 
+            RowBox[{
+             RowBox[{"k", "\[Equal]", " ", "0"}], ",", 
+             RowBox[{"Break", "[", "]"}]}], "]"}], ";", 
+           RowBox[{"rC", "=", 
+            RowBox[{"Read", "[", 
+             RowBox[{"ligandsIn", ",", 
+              RowBox[{"{", 
+               RowBox[{"Word", ",", "Number", ",", "Number", ",", "Number"}], 
+               "}"}]}], "]"}]}], ";", "\[IndentingNewLine]", 
+           RowBox[{"xC", "=", 
+            RowBox[{"Join", "[", 
+             RowBox[{"xC", ",", 
+              RowBox[{"{", 
+               RowBox[{"{", 
+                RowBox[{
+                 RowBox[{"rC", "[", 
+                  RowBox[{"[", "1", "]"}], "]"}], ",", 
+                 RowBox[{"{", 
+                  RowBox[{
+                   RowBox[{"rC", "[", 
+                    RowBox[{"[", "2", "]"}], "]"}], ",", 
+                   RowBox[{"rC", "[", 
+                    RowBox[{"[", "3", "]"}], "]"}], ",", 
+                   RowBox[{"rC", "[", 
+                    RowBox[{"[", "4", "]"}], "]"}]}], "}"}]}], "}"}], "}"}]}],
+              "]"}]}]}]}], "]"}]}]}], "]"}]}]}], "]"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Apex", "=", "1"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Ligands", "=", 
+   RowBox[{"{", 
+    RowBox[{"Range", "[", 
+     RowBox[{"2", ",", 
+      RowBox[{"Length", "[", "xC", "]"}]}], "]"}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"XAtoms", "=", "xC"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Print", "[", "ligandname", " ", "]"}], ";"}]}], "Input",
+ InitializationCell->True,
+ CellChangeTimes->{{3.563322360017165*^9, 3.5633223602544737`*^9}, {
+   3.563322608663187*^9, 3.5633226139524803`*^9}, {3.563322916059902*^9, 
+   3.5633229166441507`*^9}, {3.5633239083596373`*^9, 3.563324069423174*^9}, {
+   3.563324101432755*^9, 3.563324183121215*^9}, {3.563324229814883*^9, 
+   3.563324236173267*^9}, 3.5633242747490797`*^9, 3.563324311939248*^9, {
+   3.563324379280932*^9, 3.563324436102284*^9}, {3.563324500752037*^9, 
+   3.563324504611506*^9}, {3.563324695715578*^9, 3.563324696363764*^9}, {
+   3.563324748955226*^9, 3.56332475246102*^9}, {3.5633247855335703`*^9, 
+   3.563324816796462*^9}, {3.563324882867353*^9, 3.5633249421073923`*^9}, {
+   3.56332497648958*^9, 3.563324978408841*^9}, {3.563325030220517*^9, 
+   3.5633251141869593`*^9}, {3.563325290515511*^9, 3.563325291055914*^9}, {
+   3.56356039694381*^9, 3.56356040441949*^9}, {3.5674255741614747`*^9, 
+   3.5674255885042953`*^9}, {3.567425683083705*^9, 3.567425686712912*^9}, {
+   3.5674259168400745`*^9, 3.5674259199972553`*^9}}]
+},
+WindowSize->{1085, 387},
+WindowMargins->{{42, Automatic}, {Automatic, 81}},
+Magnification:>FEPrivate`If[
+  FEPrivate`Equal[FEPrivate`$VersionNumber, 6.], 1.25, 1.25 Inherited],
+FrontEndVersion->"8.0 for Microsoft Windows (64-bit) (February 23, 2011)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[557, 20, 4141, 100, 344, "Input",
+ InitializationCell->True]
+}
+]
+*)
+
+(* End of internal cache information *)
