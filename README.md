@@ -10,7 +10,7 @@ Cartesian coordinates for the complex are stored in ComplexDataBase1.txt in the 
 2 Z x y z
 0
 ```
-where N is the index of the complex in the database (to be called upon by ConeAngleDriver.nb), NAME is a unique identifier (for you to identify, it's not used in the program), Z is the atomic symbol (see ConeAnglePackage.nb section for list of supported atoms), and x, y, and z are the Cartesian coordiantes of the corresonding atom. 0 follows each input to separate complexes.
+where N is the index of the complex in the database (to be called upon by ConeAngleDriver.nb), NAME is a unique identifier (for you to identify, it's not used in the program), Z is the atomic symbol (see ConeAnglePackage.nb section for list of supported atoms), and x, y, and z are the Cartesian coordiantes of the corresonding atom in Å. 0 follows each input to separate complexes.
 
 
 **ComplexDataBase.nb/ComplexDataBase.m**
@@ -29,10 +29,10 @@ The output can be controlled by the variable *kPrint*:
 * *kPrint* = 4, For each ligand print both {ConeAngle, ConeAxis, ConeAtoms} and a histogram of candidate three-atom cone angles (°) in the range of (θ<sub>2max</sub>,θ<sub>cm</sub>)
 
 **ConeAnglePackage.nb/ConeAnglePackage.m**
-ConeAnglePackage.nb includes all mathematics used to solve for and visualize the cone angle. Atomic symbols H, He, C, N, O, F, Ne, Si, P, S, Cl, Ar, As, Se, Br, Kr, Te, I, Xe, and Fe are supported. To add atoms that are not supported, add the atomic symbol and van der Waals radius in ConeAnglePackage.nb in the *RvdW* variable. *RvdW* is a list of three lists. The first list holds atomic symbols, the second list holds van der Waals radii, and the third list holds the colors the atoms appear in the visualization in *kPrint* = 2. Once edits have been made to ConeAnglePackage.nb, the file must be saved as a Mathematica Package with the .m extension to allow ConeAngleDriver.nb to call upon the package.
+ConeAnglePackage.nb includes all mathematics used to solve for and visualize the cone angle. Atomic symbols H, He, C, N, O, F, Ne, Si, P, S, Cl, Ar, As, Se, Br, Kr, Te, I, Xe, and Fe are supported. To add atoms that are not supported, add the atomic symbol and van der Waals radius (in Å) in ConeAnglePackage.nb in the *RvdW* variable. *RvdW* is a list of three lists. The first list holds atomic symbols, the second list holds van der Waals radii, and the third list holds the colors the atoms appear in the visualization in *kPrint* = 2. Once edits have been made to ConeAnglePackage.nb, the file must be saved as a Mathematica Package with the .m extension to allow ConeAngleDriver.nb to call upon the package.
 
 ## OUTPUT
-Program output will appear in ConeAngleDriver.nb along with the total run time. Output level is controlled by kPrint in ConeAngleDriver.nb.
+Program output will appear in ConeAngleDriver.nb along with the total run time. Output level is controlled by *kPrint* in ConeAngleDriver.nb.
 
 ## CITATION
 If you find this work useful, please cite our publication: 
